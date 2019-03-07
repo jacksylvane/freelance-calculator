@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+  max-width: 50rem;
+  margin: 0 auto;
+}
+
+.calculator {
+  display: flex;
+  flex-flow: column;
+  width: 20rem;
+  margin: 0 auto;
+  padding: 2rem;
+  .input, .checkbox {
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 1rem;
+  }
+}
+
+button {
+  height: 2rem;
+  background: #2c81ca;
+  border: #ffdead;
+  border-radius: 3px;
+  color: #fff;
+  width: 7rem;
+  align-self: flex-end;
+  text-align: center;
+}

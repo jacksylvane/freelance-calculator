@@ -1,0 +1,51 @@
+<div class="wrapper">
+  <form [formGroup]=calculatorForm>
+    <div class="calculator">
+      <div class="input">
+        <label>Income</label>
+        <input formControlName="income">
+      </div>
+      <div class="input">
+        <label>Expenses</label>
+        <input formControlName="expenses">
+      </div>
+      <div class="checkbox">
+        <label>Calculate Maximum Pausalne Vydavky</label>
+        <input type="checkbox" formControlName="calculateMaximumMonthlyExpenses"
+          (change)="calculateMaximumMonthlyExpenses()">
+      </div>
+      <div class="input">
+        <label>Social Contributions</label>
+        <input formControlName="socialContributions">
+      </div>
+      <div class="input">
+        <label>Healthcare Contributions</label>
+        <input formControlName="healthcareContributions">
+      </div>
+      <div class="checkbox">
+        <label>Monthly Calculation</label>
+        <input type="checkbox" formControlName="monthlyCalculation">
+      </div>
+      <div class="checkbox">
+        <label>Calculate for first year as a freelancer</label>
+        <input type="checkbox" formControlName="firstYearAsFreelancer">
+      </div>
+      <button (click)="calculateResults()">Calculate</button>
+    </div>
+  </form>
+  <div class="result">
+    <h2>Result:</h2>
+    <span>
+      To pay taxes: {{taxesToPay | number:'1.2-2'}} €
+    </span>
+    <span>
+      To pay social taxes: {{socialTaxesToPay | number:'1.2-2'}} €
+    </span>
+    <span>
+      To pay health taxes: {{healthTaxesToPay | number:'1.2-2'}} €
+    </span>
+    <span>
+      Net Income: {{result - socialTaxesToPay - healthTaxesToPay | number:'1.2-2'}} €
+    </span>
+  </div>
+</div>
